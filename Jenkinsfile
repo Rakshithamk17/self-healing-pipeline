@@ -33,3 +33,11 @@ pipeline {
         }
     }
 }
+```
+
+---
+
+Key change — instead of `pip` and `pytest` we use the **full path**:
+```
+C:\\Users\\yashr\\AppData\\Local\\Programs\\Python\\Python312\\python.exe -m pip
+C:\\Users\\yashr\\AppData\\Local\\Programs\\Python\\Python312\\python.exe -m pytest
