@@ -1,6 +1,5 @@
 pipeline {
     agent any
-
     stages {
         stage('Build') {
             steps {
@@ -8,14 +7,12 @@ pipeline {
                 bat 'C:\\Users\\yashr\\AppData\\Local\\Programs\\Python\\Python312\\python.exe -m pip install -r requirements.txt'
             }
         }
-
         stage('Test') {
             steps {
                 echo 'Running tests...'
-                bat 'C:\\Users\\yashr\\AppData\\Local\\Programs\\Python\\Python312\\python.exe -m pytest test_app.py -v'
+                bat 'C:\\Users\\yashr\\AppData\\Local\\Programs\\Python\\Python312\\python.exe -m pytest test_app.py -v -p no:langsmith'
             }
         }
-
         stage('Deploy') {
             steps {
                 echo 'Deploying app...'
@@ -23,7 +20,6 @@ pipeline {
             }
         }
     }
-
     post {
         success {
             echo 'Pipeline succeeded!'
